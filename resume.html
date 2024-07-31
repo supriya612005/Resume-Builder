@@ -21,7 +21,6 @@
     <script>
         const { jsPDF } = window.jspdf;
 
-        // Load resume data from localStorage
         const name = localStorage.getItem('name');
         const email = localStorage.getItem('email');
         const phone = localStorage.getItem('phone');
@@ -97,7 +96,6 @@
 
         document.getElementById('resume-display').innerHTML = resumeHTML;
 
-        // Function to generate and download the PDF
         document.getElementById('download-btn').addEventListener('click', () => {
             html2canvas(document.getElementById('resume-display')).then(canvas => {
                 const imgData = canvas.toDataURL('image/png');
